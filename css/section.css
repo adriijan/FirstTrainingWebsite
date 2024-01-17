@@ -1,0 +1,418 @@
+/* #content {
+	padding-bottom: 3em;
+} */
+
+#content h1 {
+	font-size: 3em;
+	text-align: center;
+	margin: 1em 0.2em;
+}
+
+@media (max-width: 800px) {
+	#content h1 {
+		font-size: 2em;
+	}
+}
+
+#content h2 {
+	font-size: 2em;
+	text-align: center;
+	margin: 0.5em;
+}
+
+
+
+#content p {
+	font-size: 1.1em;
+	line-height: 150%;
+	text-align: justify;
+}
+
+/* DOMŮ */
+
+#content>.domu .intro {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2em;
+}
+
+#content>.posledni_clanky {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2em;
+}
+
+#content>.posledni_clanky .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#content>.posledni_clanky .container .boxy {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 1em;
+}
+
+#content>.posledni_clanky .container .boxy .karta {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid lightgray;
+	border-radius: 10px;
+	padding: 1em;
+	margin: 1em;
+	flex: 1;
+	box-sizing: border-box;
+}
+
+
+#content>.posledni_clanky .container .boxy .karta .clickForMore {
+	text-align: center;
+	border: 1px solid rgb(175, 175, 175);
+	background-color: white;
+	border-radius: 15px;
+	padding: 1em 2em;
+	margin-top: 1em;
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}
+
+#content>.posledni_clanky .container .boxy .karta .clickForMore:hover {
+	background-color: rgb(242, 242, 242)
+}
+
+#content>.posledni_clanky .container .boxy .karta h3 {
+	font-size: 1.4em;
+	text-align: center;
+	font-family: 'Montserrat-300';
+}
+
+#content>.posledni_clanky .container .boxy .karta img {
+	margin: 1em 0;
+	border-radius: 10px;
+}
+
+.posledni_clanky_text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+
+@media (max-width: 800px) {
+	#content>.posledni_clanky .container .boxy {
+		flex-direction: column;
+	}
+
+	#content>.posledni_clanky .container .boxy .karta {
+		width: 85vw;
+		align-items: center;
+	}
+
+	#content>.posledni_clanky .container .boxy .posledni_clanky_text {
+		max-width: 85vw;
+	}
+
+	#content>.posledni_clanky .container .boxy .posledni_clanky_text img {
+		max-width: 90%;
+		max-height: 90%;
+	}
+
+	#content>.posledni_clanky .container .boxy .posledni_clanky_text p {
+		padding: 10px;
+	}
+
+
+}
+
+
+/* O MNE */
+
+#content>.omne .intro {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2em;
+}
+
+#content>.omne .intro .boxy {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	margin-top: 2em;
+	row-gap: 1em;
+}
+
+#content>.omne .intro .boxy .karta {
+	display: flex;
+	justify-content: center;
+	row-gap: 1em;
+	column-gap: 2em;
+}
+
+
+#content>.omne .intro .boxy .karta h3 {
+	font-size: 1.5em;
+	font-weight: 800;
+}
+
+#adri {
+	width: 25%;
+	height: 25%;
+}
+
+#javascript1 {
+	width: 25vw;
+}
+
+@media (max-width: 800px) {
+
+	#content>.omne .container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#content>.omne .intro .boxy {
+		flex-direction: column;
+	}
+
+	#content>.omne .intro .boxy .karta {
+		flex-direction: column;
+		row-gap: 2em;
+		width: 85vw;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#adri {
+		display: none;
+	}
+
+	#javascript1 {
+		width: 60vw;
+	}
+
+}
+
+/* BLOG */
+
+#content>.clanky {
+	display: flex;
+	justify-content: center;
+}
+
+#content>.clanky .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 3em;
+}
+
+
+
+.obr_clanek {
+	float: right;
+	padding-left: 1.5em;
+}
+
+.clanek {
+	display: grid;
+	grid-template-columns: 25% auto auto auto;
+	grid-template-rows: 1fr;
+	grid-column-gap: 2em;
+	grid-row-gap: 0px;
+	padding-top: 15px;
+	margin-bottom: 3em;
+}
+
+#content .div1_clanek h2 {
+	margin-top: 0;
+	margin-left: 5px;
+	text-align: left;
+
+}
+
+.clanek .div1_clanek {
+	grid-area: 1 / 1 / 2 / 2;
+}
+
+.clanek .div2_clanek {
+	grid-area: 1 / 2 / 2 / 5;
+}
+
+.text-cast2 {
+	display: none;
+}
+
+.btn-light {
+	background-color: white;
+	color: gray;
+	padding: 8px;
+	border: 1px solid gray;
+	border-radius: 8px;
+	margin-left: 10px;
+}
+
+.btn-light:hover {
+	background-color: rgb(242, 242, 242);
+	cursor: pointer;
+	color: black;
+}
+
+.zobrazitVice {
+	margin-top: 5px;
+	margin-left: 0;
+}
+
+
+
+
+@media (max-width: 800px) {
+	.clanek {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#content .div1_clanek h2 {
+		margin-bottom: 1em;
+		text-align: center;
+	}
+}
+
+@media (max-width: 500px) {
+
+	.obr_clanek {
+		display: none;
+	}
+}
+
+
+/* KONTAKT - formular*/
+
+
+
+#kontaktni-formular {
+	display: flex;
+	justify-content: center;
+	margin-top: 2em;
+}
+
+#content .formular h2 {
+	font-size: 1.5em;
+	margin: 3em 2em 2em 2em;
+	text-align: center;
+	font-family: 'Montserrat';
+	font-weight: normal;
+}
+
+#content .formular #submitted {
+	font-size: 2em;
+	padding: 1em 0;
+
+}
+
+#kontaktni-formular .formular {
+	display: flex;
+	justify-content: center;
+	margin-top: 3em;
+}
+
+#kontaktni-formular form {
+	width: 70%;
+}
+
+#kontaktni-formular form .prvek {
+	width: 100%;
+	max-width: 100%;
+	font-size: 2em;
+	padding: 0.3em;
+	padding-top: 1em;
+	transition: all 0.2s;
+	font-family: Arial;
+	box-sizing: border-box;
+}
+
+
+#kontaktni-formular form .radka {
+	position: relative;
+	margin: 1em 0;
+}
+
+#kontaktni-formular form .prvek:placeholder-shown {
+	padding: 0.3em;
+}
+
+#kontaktni-formular form label {
+	position: absolute;
+	top: 0.5em;
+	left: 15px;
+	color: #805F49;
+	font-weight: bold;
+	transition: all 0.2s;
+}
+
+#kontaktni-formular form .prvek:placeholder-shown+label {
+	left: 15px;
+	font-size: 2em;
+	color: rgb(186, 186, 186);
+}
+
+#kontaktni-formular form button {
+	border-radius: 10px;
+	padding: 1em 2em;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+#kontaktni-formular form .status {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: grid;
+	align-items: center;
+	font-size: 50px;
+}
+
+#kontaktni-formular form .status .spravne {
+	display: none;
+}
+
+#kontaktni-formular form .status .spatne {
+	display: none;
+}
+
+#kontaktni-formular form .status.ok .spravne {
+	color: green;
+	display: block;
+}
+
+#kontaktni-formular form .status.chyba .spatne {
+	color: red;
+	display: block;
+}
+
+/* 404 */
+#content>.pageNotFound .errorImg {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 3em;
+}
+
+#content>.pageNotFound .errorImg img {
+	width: 500px;
+}
+
+@media (max-width: 800px) {
+	#content>.pageNotFound .errorImg img {
+		width: 90vw;
+	}
+}

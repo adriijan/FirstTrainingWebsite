@@ -1,0 +1,120 @@
+html {
+	font-family: "Montserrat";
+	font-size: 16px;
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+}
+
+.container {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+	.container {
+		padding: 0 5%;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Montserrat-300";
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Pangolin";
+	font-style: normal;
+	src: url(../fonts/pangolin-v11-latin_latin-ext-regular.woff2) format("woff2");
+	font-weight: 400;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Poiret";
+	font-style: normal;
+	src: url(../fonts/poiret-one-v16-latin_latin-ext-regular.woff2) format("woff2");
+	font-weight: 400;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Love Ya";
+	font-style: normal;
+	src: url(../fonts/love-ya-like-a-sister-v20-latin-regular.woff2) format("woff2");
+	font-weight: 400;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Apple";
+	font-style: normal;
+	src: url(../fonts/homemade-apple-v22-latin-regular.woff2) format("woff2");
+	font-weight: 400;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Pacifico";
+	font-style: normal;
+	src: url(../fonts/pacifico-v22-latin_latin-ext-regular.woff2) format("woff2");
+	font-weight: 400;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Borel";
+	font-style: normal;
+	src: url(../fonts/borel-v2-latin_latin-ext-regular.woff2) format("woff2");
+	font-weight: 400;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Satisfy";
+	font-style: normal;
+	src: url(../fonts/satisfy-v21-latin-regular.woff2) format("woff2");
+	font-weight: 400;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Montserrat";
+	font-style: normal;
+	src: url(../fonts/montserrat-v26-latin_latin-ext/montserrat-v26-latin_latin-ext-regular.woff2) format("woff2");
+	font-weight: 400;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Montserrat-300";
+	font-style: normal;
+	src: url(../fonts/montserrat-v26-latin_latin-ext/montserrat-v26-latin_latin-ext-300.woff2) format("woff2");
+	font-weight: 300;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Montserrat-700";
+	font-style: normal;
+	src: url(../fonts/montserrat-v26-latin_latin-ext/montserrat-v26-latin_latin-ext-700.woff2) format("woff2");
+	font-weight: 700;
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Montserrat-900";
+	font-style: normal;
+	src: url(../fonts/montserrat-v26-latin_latin-ext/montserrat-v26-latin_latin-ext-900.woff2) format("woff2");
+	font-weight: 900;
+}

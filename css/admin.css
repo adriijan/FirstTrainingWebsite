@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100%;
+}
+
+.admin-body {
+	margin-top: 2em;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[name="jmeno"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[name="heslo"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.admin {
+	max-width: 1000px;
+	width: 100%;
+	margin: auto;
+	padding: 1em;
+}
+
+#stranky .btn {
+	margin-right: 0.4em;
+}
+
+.alert-secondary {
+	margin-top: 1em;
+}

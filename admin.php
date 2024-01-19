@@ -65,6 +65,18 @@ if (array_key_exists("prihlasenyUser", $_SESSION)) {
 		// přesměrujeme se na url s editací stránky s novým ID (když se ID změní, nesmíme zůstat na původí url)
 		header("Location: ?stranka=" . urlencode($instanceAktualniStranky->id));
 	}
+
+	// zpracování požadavku změny pořadí stránek z JavaScriptu:
+	if (array_key_exists("poradi", $_GET)) {
+		$poradi = $_GET["poradi"]; // $poradi = pole IDs
+
+		// zavolání funkce pro nastavení pořadí a uložení do DB
+		Stranka::nastavitPoradi($poradi);
+		
+		echo "OK"; // odpovíme JS, že je to OK
+		exit; // script ukončíme, aby se do JS negeneroval zbytek stránky
+
+	}
 }
 ?>
 
@@ -81,6 +93,9 @@ if (array_key_exists("prihlasenyUser", $_SESSION)) {
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 	<title>Administrace</title>
 </head>
@@ -152,7 +167,7 @@ if (array_key_exists("prihlasenyUser", $_SESSION)) {
 					$buttonClass = "btn-light";
 				}
 
-				echo "<li class='list-group-item $active'>
+				echo "<li class='list-group-item $active' id='$instanceStranky->id'>
 			<a class='btn $buttonClass' href='?stranka=$instanceStranky->id'>
 			<i class='fa-solid fa-pen-to-square'></i>
 			</a>
@@ -264,6 +279,8 @@ if (array_key_exists("prihlasenyUser", $_SESSION)) {
 			echo "</main>";
 		} ?>
 	</div>
+
+	<script src="./js/admin.js"></script>
 </body>
 
 </html>

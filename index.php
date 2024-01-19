@@ -15,7 +15,8 @@ if (array_key_exists("stranka", $_GET)) {
 		http_response_code(404);
 	}
 } else {
-	$stranka = "uvod";
+	// zjistím první stránku z pole seznamStranek
+	$stranka = array_key_first($seznamStranek);
 }
 
 

@@ -1,12 +1,13 @@
+
+
+ErrorDocument 404 /404.html
+
 # zapnutí modulu pro přepisování URL:
 
-
-# ErrorDocument 404 /404.html
-
-# RewriteEngine On
+RewriteEngine On
 
 # pokud přijde požadavek na jakékoliv url, co neexistuje (např./kontakt), tak místo toho změnit ULR na index.php?stranka=ToCoJevURL 
 	# např. /kontakt se změní na /index.php?stranka=kontakt
 
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteRule (.+) index.php?stranka=$1 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.+) index.php?stranka=$1 [L,QSA]

@@ -111,7 +111,12 @@ if (array_key_exists("stranka", $_GET)) {
 		</p>
 	</footer>
 
+	<div id="nahoru"><i class="fa-solid fa-angle-up"></i></div>
+
 	<script src="node_modules/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+	<script src="./js/index.js"></script>
+	<script src="./js/gallery.js"></script>
+	<script src="./js/blog.js"></script>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

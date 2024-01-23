@@ -1,5 +1,8 @@
 # zapnutí modulu pro přepisování URL:
 
+
+ErrorDocument 404 /404.html
+
 RewriteEngine On
 
 # pokud přijde požadavek na jakékoliv url, co neexistuje (např./kontakt), tak místo toho změnit ULR na index.php?stranka=ToCoJevURL 

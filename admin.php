@@ -72,7 +72,7 @@ if (array_key_exists("prihlasenyUser", $_SESSION)) {
 
 		// zavolání funkce pro nastavení pořadí a uložení do DB
 		Stranka::nastavitPoradi($poradi);
-		
+
 		echo "OK"; // odpovíme JS, že je to OK
 		exit; // script ukončíme, aby se do JS negeneroval zbytek stránky
 
@@ -172,7 +172,7 @@ if (array_key_exists("prihlasenyUser", $_SESSION)) {
 			<i class='fa-solid fa-pen-to-square'></i>
 			</a>
 
-			<a class='btn $buttonClass' href='?stranka=$instanceStranky->id&smazat'>
+			<a class='btn smazat 	$buttonClass' href='?stranka=$instanceStranky->id&smazat'>
 			<i class='fa-solid fa-trash-can'></i>
 			</a>
 

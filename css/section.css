@@ -276,6 +276,10 @@
 
 
 @media (max-width: 800px) {
+
+	#content>.clanky .container {
+		margin-top: 1.2em;
+	}
 	.clanek {
 		display: flex;
 		flex-direction: column;

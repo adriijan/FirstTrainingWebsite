@@ -77,6 +77,10 @@ if (array_key_exists("odeslat", $_POST)) {
 						echo "<div class='chyba'>{$chyby['jmeno']}</div>";
 					}
 					?>
+					<div class="status">
+						<i class="fa-solid fa-check right"></i>
+						<i class="fa-solid fa-xmark wrong"></i>
+					</div>
 				</div>
 
 				<div class="radka">
@@ -87,6 +91,10 @@ if (array_key_exists("odeslat", $_POST)) {
 						echo "<div class='chyba'>{$chyby['telefon']}</div>";
 					}
 					?>
+					<div class="status">
+						<i class="fa-solid fa-check right"></i>
+						<i class="fa-solid fa-xmark wrong"></i>
+					</div>
 				</div>
 
 				<div class="radka">
@@ -97,6 +105,10 @@ if (array_key_exists("odeslat", $_POST)) {
 						echo "<div class='chyba'>{$chyby['email']}</div>";
 					}
 					?>
+					<div class="status">
+						<i class="fa-solid fa-check right"></i>
+						<i class="fa-solid fa-xmark wrong"></i>
+					</div>
 				</div>
 
 				<div class="radka">
@@ -107,6 +119,10 @@ if (array_key_exists("odeslat", $_POST)) {
 						echo "<div class='chyba'>{$chyby['zprava']}</div>";
 					}
 					?>
+					<div class="status">
+						<i class="fa-solid fa-check right"></i>
+						<i class="fa-solid fa-xmark wrong"></i>
+					</div>
 				</div>
 
 				<div class="radka">
@@ -126,3 +142,28 @@ if (array_key_exists("odeslat", $_POST)) {
 		font-weight: bold;
 	}
 </style>
+
+<script>
+	// odchytím události uvnitř inputu, zjistím, do kterého inputu píšu a zjistím hodnotu, která je vepsaná
+	$("#kontaktni-formular [name]").on("input", (event) => {
+		const input = event.currentTarget;
+		const nazevInputu = input.getAttribute("name");
+		const hodnotaInputu = input.value;
+		console.log(hodnotaInputu);
+
+		let ok = true;
+		if (nazevInputu == "jmeno")
+		{
+			// validace jména
+			if (hodnotaInputu.length < 5) {
+				ok = false;
+			}
+		}
+		// vizualizace výsledku validace
+		const statusElement = document.querySelector(`#kontaktni-formular [name=${nazevInputu}]~.status`);
+		console.log(statusElement);
+		 
+	});
+
+
+</script>

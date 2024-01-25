@@ -378,7 +378,7 @@
 
 #kontaktni-formular form .status {
 	position: absolute;
-	right: 0;
+	right: 20px;
 	top: 0;
 	bottom: 0;
 	display: grid;
@@ -386,20 +386,20 @@
 	font-size: 50px;
 }
 
-#kontaktni-formular form .status .spravne {
+#kontaktni-formular form .status .right {
 	display: none;
 }
 
-#kontaktni-formular form .status .spatne {
+#kontaktni-formular form .status .wrong {
 	display: none;
 }
 
-#kontaktni-formular form .status.ok .spravne {
+#kontaktni-formular form .status.ok .right {
 	color: green;
 	display: block;
 }
 
-#kontaktni-formular form .status.chyba .spatne {
+#kontaktni-formular form .status.chyba .wrong {
 	color: red;
 	display: block;
 }

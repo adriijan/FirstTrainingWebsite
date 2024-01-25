@@ -1,7 +1,7 @@
 <?php
 
-require_once "stranky.php";
 require "vendor/autoload.php";
+require "stranky.php";
 
 
 if (array_key_exists("stranka", $_GET)) {
@@ -46,6 +46,7 @@ if (array_key_exists("stranka", $_GET)) {
 	<link rel="shortcut icon" href="img/favicon.png.png">
 	<link rel="stylesheet" href="fontawesome/fontawesome-free-6.4.2-web/css/all.min.css">
 
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -99,10 +100,10 @@ if (array_key_exists("stranka", $_GET)) {
 
 	<footer>
 		<div class="container">
-		<div id="adminCopy">
-			<div id="admin"><a href="admin.php">Website administration</a></div>
-			<div id="copyright">Copyright &copy 2024</div>
-		</div>
+			<div id="adminCopy">
+				<div id="admin"><a href="admin.php">Website administration</a></div>
+				<div id="copyright">Copyright &copy 2024</div>
+			</div>
 		</div>
 		<p>
 			<img src="img/favicon.png.png" alt="ikona" width="22px">

@@ -8,9 +8,11 @@ $telefon = "";
 $email = "";
 $zprava = "";
 $odeslano = "";
+$formularOdeslan = false;
 
 if (array_key_exists("odeslat", $_POST)) {
 	// formulář byl odeslán - vytáhnu si z něj údaje
+	$formularOdeslan = true;
 	$jmeno = $_POST["jmeno"];
 	$telefon = $_POST["telefon"];
 	$email = $_POST["email"];
@@ -26,7 +28,7 @@ if (array_key_exists("odeslat", $_POST)) {
 		$chyby["telefon"] = "Invalid phone number";
 	}
 
-	if (!preg_match("/.@.+\\.+/", $email)) {
+	if (!preg_match("/.+@.+\\..+/", $email)) {
 		$chyby["email"] = "Invalid e-mail address";
 	}
 
@@ -73,11 +75,17 @@ if (array_key_exists("odeslat", $_POST)) {
 					<input class="prvek" type="text" name="jmeno" id="jmeno" placeholder=" " value="<?php echo htmlspecialchars($jmeno); ?>" />
 					<label for="jmeno">Name</label>
 					<?php
-					if (array_key_exists("jmeno", $chyby)) {
-						echo "<div class='chyba'>{$chyby['jmeno']}</div>";
+					$status = "";
+					if ($formularOdeslan)
+					{
+						$status = "ok";
+						if (array_key_exists("jmeno", $chyby)) {
+							$status = "chyba";
+							echo "<div class='chyba'>{$chyby['jmeno']}</div>";
+						}
 					}
 					?>
-					<div class="status">
+					<div class="status <?php echo $status; ?>">
 						<i class="fa-solid fa-check right"></i>
 						<i class="fa-solid fa-xmark wrong"></i>
 					</div>
@@ -87,11 +95,17 @@ if (array_key_exists("odeslat", $_POST)) {
 					<input class="prvek" type="text" name="telefon" id="telefon" placeholder=" " value="<?php echo htmlspecialchars($telefon); ?>" />
 					<label for="telefon">Phone number</label>
 					<?php
-					if (array_key_exists("telefon", $chyby)) {
-						echo "<div class='chyba'>{$chyby['telefon']}</div>";
+					$status = "";
+					if ($formularOdeslan)
+					{
+						$status = "ok";
+						if (array_key_exists("telefon", $chyby)) {
+							$status = "chyba";
+							echo "<div class='chyba'>{$chyby['telefon']}</div>";
+						}
 					}
 					?>
-					<div class="status">
+					<div class="status <?php echo $status; ?>">
 						<i class="fa-solid fa-check right"></i>
 						<i class="fa-solid fa-xmark wrong"></i>
 					</div>
@@ -101,11 +115,17 @@ if (array_key_exists("odeslat", $_POST)) {
 					<input class="prvek" type="email" name="email" id="email" placeholder=" " value="<?php echo htmlspecialchars($email); ?>" />
 					<label for="email">E-mail</label>
 					<?php
-					if (array_key_exists("email", $chyby)) {
-						echo "<div class='chyba'>{$chyby['email']}</div>";
+					$status = "";
+					if ($formularOdeslan)
+					{
+						$status = "ok";
+						if (array_key_exists("email", $chyby)) {
+							$status = "chyba";
+							echo "<div class='chyba'>{$chyby['email']}</div>";
+						}
 					}
 					?>
-					<div class="status">
+					<div class="status <?php echo $status; ?>">
 						<i class="fa-solid fa-check right"></i>
 						<i class="fa-solid fa-xmark wrong"></i>
 					</div>
@@ -115,11 +135,17 @@ if (array_key_exists("odeslat", $_POST)) {
 					<textarea class="prvek" name="zprava" id="zprava" placeholder=" " rows="3"><?php echo htmlspecialchars($zprava); ?></textarea>
 					<label for="zprava">Message</label>
 					<?php
-					if (array_key_exists("zprava", $chyby)) {
-						echo "<div class='chyba'>{$chyby['zprava']}</div>";
+					$status = "";
+					if ($formularOdeslan)
+					{
+						$status = "ok";
+						if (array_key_exists("zprava", $chyby)) {
+							$status = "chyba";
+							echo "<div class='chyba'>{$chyby['zprava']}</div>";
+						}
 					}
 					?>
-					<div class="status">
+					<div class="status <?php echo $status; ?>">
 						<i class="fa-solid fa-check right"></i>
 						<i class="fa-solid fa-xmark wrong"></i>
 					</div>
@@ -149,7 +175,7 @@ if (array_key_exists("odeslat", $_POST)) {
 		const input = event.currentTarget;
 		const nazevInputu = input.getAttribute("name");
 		const hodnotaInputu = input.value;
-		console.log(hodnotaInputu);
+		// console.log(hodnotaInputu);
 
 		let ok = true;
 		if (nazevInputu == "jmeno")
@@ -159,9 +185,36 @@ if (array_key_exists("odeslat", $_POST)) {
 				ok = false;
 			}
 		}
+
+		else if (nazevInputu == "telefon")
+		{
+			if (hodnotaInputu.length < 9) {
+				ok = false;
+			}
+		}
+
+		else if (nazevInputu == "email")
+		{
+			if (hodnotaInputu.match(/.+@.+\..+/) == null) {
+				ok = false;
+			}
+		}
+
+		else if (nazevInputu == "zprava") 
+		{
+			if (hodnotaInputu.length < 5) {
+				ok = false;
+			}
+		}
+
 		// vizualizace výsledku validace
 		const statusElement = document.querySelector(`#kontaktni-formular [name=${nazevInputu}]~.status`);
-		console.log(statusElement);
+		// console.log(statusElement);
+		if (ok) {
+			statusElement.className = "status ok";
+		} else {
+			statusElement.className = "status chyba";
+		}
 		 
 	});
 

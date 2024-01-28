@@ -7,7 +7,7 @@ $jmeno = "";
 $telefon = "";
 $email = "";
 $zprava = "";
-$odeslano = "";
+$odeslano = false;
 $formularOdeslan = false;
 
 if (array_key_exists("odeslat", $_POST)) {

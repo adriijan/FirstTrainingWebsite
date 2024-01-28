@@ -1,9 +1,9 @@
 <?php
 
 $db = new PDO(
-	"mysql:host=localhost;dbname=mujweb;charset=utf8",
-	"root",
-	"",
+	"mysql:host=db.dw172.webglobe.com;dbname=kockoff_cz;charset=utf8",
+	"kockoff_cz",
+	"1241993Ad,",
 	array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
 );
 
@@ -72,7 +72,7 @@ class Stranka
 		}
 	}
 
-	function smazat() 
+	function smazat()
 	{
 		global $db;
 
@@ -85,10 +85,9 @@ class Stranka
 		global $db;
 
 		// projdeme pole s pořadím (pole je číslované)
-		foreach ($poradi as $cislo => $idStranky) 
-		{
+		foreach ($poradi as $cislo => $idStranky) {
 			$dotaz = $db->prepare("UPDATE stranka SET poradi = ? WHERE id =?");
-			$dotaz->execute([$cislo, $idStranky]); 
+			$dotaz->execute([$cislo, $idStranky]);
 		}
 	}
 }
